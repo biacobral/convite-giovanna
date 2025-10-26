@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Giovanna - 15 Anos</title>
+
+  <!-- Fontes -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Alice&family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <!-- Ícones Lucide -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ======= CONFIGURAÇÕES GERAIS ======= */
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Alice', serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      color: #654080;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* ======= FUNDO (imagem ou GIF) ======= */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("planodefundo2.jpg") no-repeat center center/cover;
+      filter: brightness(0.9);
+      z-index: -2;
+    }
+
+    .footer-decor {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 400px; 
+  background: url("borboletas.gif") no-repeat center bottom;
+  background-size: contain;
+  z-index: 0;
+  pointer-events: none;
+}
+
+
+    /* ======= CAMADA DE BRILHO ======= */
+    .overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 70%);
+      z-index: -1;
+      animation: shimmer 6s infinite alternate;
+    }
+
+    @keyframes shimmer {
+      from { opacity: 0.6; }
+      to { opacity: 1; }
+    }
+
+    /* ======= CONTEÚDO PRINCIPAL ======= */
+    .container {
+      background: rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+      padding: 40px 25px;
+      max-width: 400px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 0 25px rgba(101, 64, 128, 0.3);
+    }
+
+    .title {
+      font-family: 'Great Vibes', cursive;
+      font-size: 5em;
+      margin-bottom: -10px;
+      color: #654080;
+    }
+
+    .subtitle {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      color: #654080;
+      margin-bottom: 20px;
+    }
+
+    .text {
+      font-family: 'Alice', serif;
+      font-size: 0.95em;
+      line-height: 1.6em;
+      margin-bottom: 25px;
+      color: #654080;
+    }
+
+    .info {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 1em;
+      margin-bottom: 30px;
+      color: #af53a6;
+    }
+
+    /* ======= BOTÕES INTERATIVOS ======= */
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .buttons a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      background: linear-gradient(135deg, #b891e5, #d8b7f8);
+      padding: 15px 0;
+      border-radius: 30px;
+      color: white;
+      font-weight: bold;
+      font-size: 0.95em;
+      transition: transform 0.2s, background 0.3s;
+      width: 90%;
+      max-width: 350px;
+    }
+2
+    .buttons a:hover {
+      transform: scale(1.05);
+      background: linear-gradient(135deg, #a271d8, #cba0f5);
+    }
+
+    .buttons i {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
+    }
+
+    /* Ícones SVG dentro dos botões */
+    .buttons .icon svg {
+      width: 28px;
+      height: 28px;
+      margin-bottom: 5px;
+      fill: white;
+    }
+
+    /* ======= RESPONSIVIDADE ======= */
+    @media (max-width: 500px) {
+      .container {
+        padding: 25px 15px;
+        width: 90%;
+      }
+
+      .title { font-size: 2.3em; }
+      .subtitle { font-size: 1.6em; }
+      .buttons a { font-size: 0.85em; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="overlay"></div>
+  <div class="footer-decor"></div>
+
+  <main class="container">
+    <h1 class="title">Giovanna</h1>
+    <h2 class="subtitle">15 anos</h2>
+
+    <p class="info">
+      <strong>31/01/2026</strong><br>
+      <strong>20h00min</strong><br>
+    </p>
+
+    <div class="buttons">
+      <a href="https://maps.app.goo.gl/DRA1ubkqGrCWRc4H6" target="_blank">
+        <i data-lucide="map-pin"></i>
+        Localização
+      </a>
+
+      <a href="presentes.pdf" target="_blank">
+        <i data-lucide="gift"></i>
+        Sugestões de Presente
+      </a>
+
+      <a href="https://www.notion.so/Dress-Code-15z-o-da-gih-2988457d60a980208a2cfc2ce584ccf1?source=copy_link" target="_blank">
+        <span class="icon">
+          <svg viewBox="0 0 24 24">
+            <path d="M12 2L10 6H4L6 12H18L20 6H14L12 2ZM6 14V22H18V14H6Z"/>
+          </svg>
+        </span>
+        Dress Code
+      </a>
+
+      <a href="https://forms.gle/SEU_FORM_AQUI" target="_blank">
+        <i data-lucide="mail"></i>
+        Confirmação
+      </a>
+    </div>
+  </main>
+
+  <script>
+    lucide.createIcons();
+  </script>
+</body>
+</html>

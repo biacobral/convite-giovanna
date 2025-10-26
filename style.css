@@ -1,0 +1,185 @@
+/* ======= CONFIGURAÇÕES GERAIS ======= */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Alice', serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  color: #654080;
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* ======= FUNDO (imagem ou GIF) ======= */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: url("planodefundo2.jpg") no-repeat center center/cover;
+  /* 👉 se quiser testar com GIF, troque acima por: background: url("SEU-GIF-AQUI.gif") no-repeat center center/cover; */
+  filter: brightness(0.9);
+  z-index: -2;
+}
+
+.footer-decor {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px; /* ajusta conforme o tamanho do arquivo */
+  background: url("borboletas.gif") no-repeat center bottom;
+  background-size: cover; /* ou "contain" se quiser sem cortar */
+  z-index: -1; /* fica atrás do conteúdo */
+  pointer-events: none; /* evita bloquear cliques nos botões */
+}
+
+
+/* ======= CAMADA DE BRILHO SUAVE ======= */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 50%, rgba(255,255,255,0.1), transparent 70%);
+  z-index: -1;
+  animation: shimmer 6s infinite alternate;
+}
+
+@keyframes shimmer {
+  from { opacity: 0.6; }
+  to { opacity: 1; }
+}
+
+/* ======= CONTEÚDO PRINCIPAL ======= */
+.container {
+  background: rgba(255, 255, 255, 0.25);
+  border-radius: 20px;
+  padding: 40px 25px;
+  max-width: 400px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 25px rgba(101, 64, 128, 0.3);
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3em;
+  margin-bottom: -10px;
+  color: #654080;
+}
+
+.subtitle {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2em;
+  color: #654080;
+  margin-bottom: 20px;
+}
+
+.text {
+  font-family: 'Alice', serif;
+  font-size: 0.95em;
+  line-height: 1.6em;
+  margin-bottom: 25px;
+  color: #654080;
+}
+
+.info {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 0.9em;
+  margin-bottom: 30px;
+  color: #af53a6;
+}
+
+/* ======= BOTÕES INTERATIVOS ======= */
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.buttons a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background: linear-gradient(135deg, #b891e5, #d8b7f8);
+  padding: 15px 0;
+  border-radius: 30px;
+  color: white;
+  font-weight: bold;
+  font-size: 0.95em;
+  transition: transform 0.2s, background 0.3s;
+}
+
+.buttons a:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #a271d8, #cba0f5);
+}
+
+/* Ícones */
+.buttons i {
+  width: 28px;
+  height: 28px;
+  margin-bottom: 5px;
+}
+
+/* ======= RESPONSIVIDADE ======= */
+@media (max-width: 500px) {
+  .container {
+    padding: 25px 15px;
+    width: 90%;
+  }
+
+  .title {
+    font-size: 2.3em;
+  }
+
+  .subtitle {
+    font-size: 1.6em;
+  }
+
+  .buttons a {
+    font-size: 0.85em;
+  }
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 25px;
+  width: 90%;
+  max-width: 400px;
+  justify-content: center;
+  border-radius: 12px;
+  font-size: 18px;
+  background-color: #af53a6;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.modal-side {
+  display: none;
+  position: fixed;
+  top: 20%;
+  right: 0;
+  width: 300px;
+  background-color: white;
+  border-radius: 12px 0 0 12px;
+  box-shadow: -3px 3px 15px rgba(0,0,0,0.2);
+  padding: 20px;
+  z-index: 10;
+}
+
+.modal-side .close {
+  float: right;
+  font-size: 24px;
+  cursor: pointer;
+}
+
